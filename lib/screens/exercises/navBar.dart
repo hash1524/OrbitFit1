@@ -7,8 +7,10 @@ import 'package:orbitFit1/screens/macros/normalweight.dart';
 import 'package:orbitFit1/screens/workouts/normalWeight.dart';
 import 'package:orbitFit1/screens/workouts/overWeight.dart';
 import 'package:orbitFit1/screens/workouts/underWeight.dart';
+import 'package:orbitFit1/provider/auth.dart';
 
 class NavBar extends StatelessWidget {
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -143,14 +145,9 @@ class NavBar extends StatelessWidget {
               textScaleFactor: 1.4,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            onTap: () {
-              Navigator.pop(
-                context,
-              );
-              Navigator.popAndPushNamed(
-                context,
-                SignInScreen.routeName,
-              );
+            onTap: () async {
+              await _auth.signOut();
+              Navigator.popAndPushNamed(context, SignInScreen.routeName);
             },
           ),
           Divider(),

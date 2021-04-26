@@ -21,10 +21,6 @@ class ChestContent extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text(
-          text,
-          textAlign: TextAlign.center,
-        ),
         Spacer(
           flex: 2,
         ),
@@ -32,6 +28,29 @@ class ChestContent extends StatelessWidget {
           image,
           height: getProportionateScreenHeight(265),
           width: getProportionateScreenWidth(235),
+        ),
+        Spacer(
+          flex: 2,
+        ),
+        Text(
+          'Scroll for description',
+          style: TextStyle(
+            fontSize: getProportionateScreenWidth(18),
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Expanded(
+          flex: 50,
+          child: SingleChildScrollView(
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+        Spacer(
+          flex: 2,
         ),
       ],
     );

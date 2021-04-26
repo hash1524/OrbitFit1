@@ -9,7 +9,14 @@ class UnderWeightMacrosScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
+          Spacer(),
+          Text(
+            'You have to make sure that all your meals combined for the day should have macros in the portions as shown',
+            textAlign: TextAlign.center,
+          ),
+          Spacer(),
           Image.asset('assets/images/underMacro.png'),
+          Spacer(),
           Row(
             children: [
               Column(
@@ -49,6 +56,7 @@ class UnderWeightMacrosScreen extends StatelessWidget {
               ),
             ],
           ),
+          Spacer(),
         ],
       ),
     );

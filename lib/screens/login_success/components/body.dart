@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:orbitFit1/components/default_button.dart';
 import 'package:orbitFit1/screens/Exercises/exercises.dart';
+import 'package:orbitFit1/screens/tour/tour.dart';
 import 'package:orbitFit1/size_config.dart';
 
 class Body extends StatelessWidget {
@@ -23,6 +24,21 @@ class Body extends StatelessWidget {
             fontSize: getProportionateScreenWidth(30),
             fontWeight: FontWeight.bold,
             color: Colors.black,
+          ),
+        ),
+        Spacer(),
+        SizedBox(
+          width: SizeConfig.screenWidth * 0.6,
+          child: DefaultButton(
+            text: "App Walkthrough",
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TourScreen(),
+                ),
+              );
+            },
           ),
         ),
         Spacer(),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:orbitFit1/provider/auth.dart';
 import 'package:orbitFit1/screens/exercises/components/body.dart';
 import 'package:orbitFit1/screens/exercises/navBar.dart';
 import 'package:orbitFit1/screens/sign_in/sign_in_screen.dart';
+import 'package:orbitFit1/screens/tour/tour.dart';
 
 class ExercisesScreen extends StatefulWidget {
   static String routeName = "/exercises";
@@ -12,8 +12,6 @@ class ExercisesScreen extends StatefulWidget {
 }
 
 class _ExercisesScreenState extends State<ExercisesScreen> {
-  final AuthService _auth = AuthService();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,16 +19,20 @@ class _ExercisesScreenState extends State<ExercisesScreen> {
         title: Text('OrbitFit'),
         actions: [
           FlatButton.icon(
-            onPressed: () async {
-              await _auth.signOut();
-              Navigator.popAndPushNamed(context, SignInScreen.routeName);
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TourScreen(),
+                ),
+              );
             },
             icon: Icon(
-              Icons.person,
+              Icons.card_travel,
               color: Color(0xFF8B8B8B),
             ),
             label: Text(
-              "LogOut",
+              "App tour",
               style: TextStyle(color: Color(0xFF8B8B8B)),
             ),
           )
