@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:orbitFit1/models/exercises.dart';
+import 'package:orbitFit1/screens/abs/abs.dart';
+import 'package:orbitFit1/screens/back/back.dart';
 import 'package:orbitFit1/screens/cardio/cardio.dart';
+import 'package:orbitFit1/screens/chest/chest.dart';
 
 import 'itemCard.dart';
 
@@ -24,6 +27,18 @@ class Body extends StatelessWidget {
               itemBuilder: (context, index) => ItemCard(
                 exercise: exercises[index],
                 press: () {
+                  if (index == 2) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => BackScreen()));
+                  }
+                  if (index == 0) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ChestScreen()));
+                  }
+                  if (index == 1) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AbsScreen()));
+                  }
                   if (index == 5) {
                     Navigator.push(
                         context,

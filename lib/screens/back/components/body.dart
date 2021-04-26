@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:orbitFit1/constants.dart';
-import 'package:orbitFit1/screens/cardio/components/cardiocontent.dart';
+import 'package:orbitFit1/screens/back/components/backcontent.dart';
 import 'package:orbitFit1/size_config.dart';
 
 class Body extends StatefulWidget {
@@ -10,18 +10,21 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   int currentPage = 0;
-  List<Map<String, String>> cardioData = [
+  List<Map<String, String>> backData = [
     {
-      "text": "Running",
-      "image": "assets/images/running.png",
+      "text":
+          "Arm Leg Raise\nAlternative Arm/Leg Raises challenge your core and help you develop better balance and stability.",
+      "image": "assets/images/back-armlegraise.png",
     },
     {
-      "text": "Skipping",
-      "image": "assets/images/skipping.png",
+      "text":
+          "Side Plank\nReduces your risk of a back injury.\nIncluding planks and side planks in your training program may help reduce your risk of a back injury.",
+      "image": "assets/images/back-sideplank.png",
     },
     {
-      "text": "Cycling",
-      "image": "assets/images/cycling.png",
+      "text":
+          "Streches\nLower back stretches to increase flexibility and relieve pain.",
+      "image": "assets/images/backstreches.png",
     }
   ];
   @override
@@ -39,10 +42,10 @@ class _BodyState extends State<Body> {
                     currentPage = value;
                   });
                 },
-                itemCount: cardioData.length,
-                itemBuilder: (context, index) => CardioContent(
-                  image: cardioData[index]["image"],
-                  text: cardioData[index]["text"],
+                itemCount: backData.length,
+                itemBuilder: (context, index) => BackContent(
+                  image: backData[index]["image"],
+                  text: backData[index]["text"],
                 ),
               ),
             ),
@@ -57,7 +60,7 @@ class _BodyState extends State<Body> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
-                        cardioData.length,
+                        backData.length,
                         (index) => buildDot(index: index),
                       ),
                     ),

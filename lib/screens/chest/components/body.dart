@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:orbitFit1/constants.dart';
-import 'package:orbitFit1/screens/cardio/components/cardiocontent.dart';
+import 'package:orbitFit1/screens/chest/components/chestcontent.dart';
 import 'package:orbitFit1/size_config.dart';
 
 class Body extends StatefulWidget {
@@ -10,18 +10,21 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   int currentPage = 0;
-  List<Map<String, String>> cardioData = [
+  List<Map<String, String>> chestData = [
     {
-      "text": "Running",
-      "image": "assets/images/running.png",
+      "text":
+          "PushUps\nThe pushup needs no introduction—it is one of the greatest exercises there is.\n Not only does it strengthen your chest, but it also trains your core and builds conditioning (with no equipment necessary).",
+      "image": "assets/images/chest-pushups.png",
     },
     {
-      "text": "Skipping",
-      "image": "assets/images/skipping.png",
+      "text":
+          "Knee-Pushups\nThe knee push-up is a compound bodyweight exercise which builds muscle and strength in the chest muscles.",
+      "image": "assets/images/chest-kneepushups1.png",
     },
     {
-      "text": "Cycling",
-      "image": "assets/images/cycling.png",
+      "text":
+          "Leaning Forwards\nThe best compound chest exercises will target multiple muscle groups including the pectoralis major and pectoralis minor, but will also engage parts of the arms, back, and shoulders.",
+      "image": "assets/images/chest-bendforward1.png",
     }
   ];
   @override
@@ -39,10 +42,10 @@ class _BodyState extends State<Body> {
                     currentPage = value;
                   });
                 },
-                itemCount: cardioData.length,
-                itemBuilder: (context, index) => CardioContent(
-                  image: cardioData[index]["image"],
-                  text: cardioData[index]["text"],
+                itemCount: chestData.length,
+                itemBuilder: (context, index) => ChestContent(
+                  image: chestData[index]["image"],
+                  text: chestData[index]["text"],
                 ),
               ),
             ),
@@ -57,7 +60,7 @@ class _BodyState extends State<Body> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
-                        cardioData.length,
+                        chestData.length,
                         (index) => buildDot(index: index),
                       ),
                     ),

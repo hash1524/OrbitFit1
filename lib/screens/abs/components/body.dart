@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:orbitFit1/constants.dart';
-import 'package:orbitFit1/screens/cardio/components/cardiocontent.dart';
+import 'package:orbitFit1/screens/abs/components/abscontent.dart';
 import 'package:orbitFit1/size_config.dart';
 
 class Body extends StatefulWidget {
@@ -10,18 +10,21 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   int currentPage = 0;
-  List<Map<String, String>> cardioData = [
+  List<Map<String, String>> absData = [
     {
-      "text": "Running",
-      "image": "assets/images/running.png",
+      "text":
+          "Plank\nThe plank exercise can be used as the basis for a core muscle strength and stability test.\nThe plank is more of a strength-building exercise than a cardio exercise, but by engaging a range of muscles it does boost your calorie burn a bit.",
+      "image": "assets/images/abs-plank1.png",
     },
     {
-      "text": "Skipping",
-      "image": "assets/images/skipping.png",
+      "text":
+          "Leg Raises\nIf you're serious about strengthening your abs, you should be doing some sort of leg raises.\nThey're such a good exercise because they work all parts of your abs, especially the lower abs ",
+      "image": "assets/images/abs-legraises1.png",
     },
     {
-      "text": "Cycling",
-      "image": "assets/images/cycling.png",
+      "text":
+          "Twist\nTwist exercises not only work on your upper and lower abdominals, but also works on the oblique muscles.",
+      "image": "assets/images/abs-twist1.png",
     }
   ];
   @override
@@ -39,10 +42,10 @@ class _BodyState extends State<Body> {
                     currentPage = value;
                   });
                 },
-                itemCount: cardioData.length,
-                itemBuilder: (context, index) => CardioContent(
-                  image: cardioData[index]["image"],
-                  text: cardioData[index]["text"],
+                itemCount: absData.length,
+                itemBuilder: (context, index) => AbsContent(
+                  image: absData[index]["image"],
+                  text: absData[index]["text"],
                 ),
               ),
             ),
@@ -57,7 +60,7 @@ class _BodyState extends State<Body> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
-                        cardioData.length,
+                        absData.length,
                         (index) => buildDot(index: index),
                       ),
                     ),
